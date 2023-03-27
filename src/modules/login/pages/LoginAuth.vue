@@ -6,13 +6,13 @@
 
       <form>
         <div class="mb-3">
-          <label for="exampleInputEmail1" class="form-label">Email address</label>
-          <input type="email" class="btn-primary" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email address">
+          <label for="exampleInputEmail1" class="form-label"></label>
+          <input type="email" class="btn-primary" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email">
           <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
         </div>
         <div class="mb-3">
-          <label for="exampleInputPassword1" class="form-label">Password</label>
-          <input type="password" class="btn-primary" id="exampleInputPassword1" placeholder="Password">
+          <label for="exampleInputPassword1" class="form-label"></label>
+          <input type="password" class="btn-primary" id="exampleInputPassword1" placeholder="Contraseña">
         </div>
         <div class="mb-3 form-check">
           <input type="checkbox" class="form-check-input" id="exampleCheck1">
@@ -32,10 +32,15 @@ export default {
 </script>
 
 <style>
+* {
+  margin:0px;
+  padding: 0px;
+  font-family: roboto;
+}
+
 .principal {
   position: relative;
   width: 100%;
-  height: 100%;
   background-image: url("../../../assets/fondo.png");
   background-size: cover;
   background-position: center;
@@ -62,8 +67,7 @@ h1 {
   letter-spacing: 0.16px;
   color: #ffff;
 }
-
-.menu h3 {
+ h3 {
   font-style: normal;
   font-weight: 500;
   line-height: 53px;
@@ -129,5 +133,12 @@ h1 {
   width: 272px;
   border-radius: 30px;
   padding-left: 27px;
+}
+
+form{
+  
+  display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 </style>

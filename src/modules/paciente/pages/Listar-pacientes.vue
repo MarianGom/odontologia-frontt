@@ -4,11 +4,11 @@
       <h1>Listado de Pacientes</h1>
 
       <RouterLink to="/nuevo-paciente">
-        <button type="button" class="btn btn-success">Nuevo paceinte</button>
+        <button type="button" class="btn-acento">Nuevo paciente</button>
       </RouterLink>
 
       <RouterLink to="/home-page">
-        <button type="button" class="btn btn-secondary">volver</button>
+        <button type="button" class="btn-secondary">volver</button>
       </RouterLink>
       <div class="container">
         <div class="row">
@@ -70,6 +70,9 @@
       </div>
     </div>
   </header>
+  <body>
+
+  </body>
 </template>
 
 <script>
@@ -120,4 +123,48 @@ export default {
 </script>
 
 <style>
+
+.wrapper {
+    margin-top: 50px;
+    background-color: #00A6D0;
+  
+}
+body {
+    background-color: #00A6D0;
+  
+}
+.btn-acento {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 25px;
+    color: #FAD8D6;
+    text-transform: capitalize;
+    text-decoration: none;
+    letter-spacing: 0.25px;
+    background-color: #EE596D;
+    width: 250px;
+    height: 60px;
+    border-radius: 40px;
+    border: none;
+    margin: 2% 0% 2% 0%;
+    cursor: pointer;
+    transition: all 1s ease;  
+}
+.btn-secondary {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 25px;
+    color: #00002E;
+    text-transform: capitalize;
+    text-decoration: none;
+    letter-spacing: 0.25px;
+    background-color: #FAD8D6;
+    width: 250px;
+    height: 60px;
+    border-radius: 40px;
+    border: none;
+    margin: 2% 0% 2% 0%;
+    cursor: pointer;
+    transition: all 1s ease;
+}
 </style>

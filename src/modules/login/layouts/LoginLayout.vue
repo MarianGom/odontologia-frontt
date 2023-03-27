@@ -13,10 +13,15 @@
  </section>
 </template>
 
-<style scoped>.principal {
+<style scoped>
+* {
+  margin:0px;
+  padding: 0px;
+  font-family: roboto;
+}
+.principal {
   position: relative;
   width: 100%;
-  height: 100%;
   background-image: url("../../../assets/fondo.png");
   background-size: cover;
   background-position: center;
@@ -33,7 +38,7 @@
   line-height: 0;
 }
 
-.menu h1{
+h1{
 
   font-style: italic;
   font-weight: 900;
@@ -42,7 +47,7 @@
   letter-spacing: 0.16px;
   color: #ffff;
 }
-.menu h3{
+ h3{
   font-style: normal;
   font-weight: 500;
   line-height: 53px;

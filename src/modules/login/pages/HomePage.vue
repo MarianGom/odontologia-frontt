@@ -6,9 +6,11 @@
         <div class="contenido-header">
             <nav class="nav">
                 <ul id="links">
-                    <li><a href="#inicio">Inicio</a></li>
-                    <li><a href="#tratamientos">Tratamientos</a></li>
-                    <li><a href="paciente.html">Pacientes</a></li>
+                    
+                    <li><router-link to="home-page">Inicio</router-link></li>
+                    <li><router-link to="listar-tratamientos">Tratamientos</router-link></li>
+                    <li><router-link to="listar-pacientes">Pacientes</router-link></li>
+
                 </ul>
             </nav>
             <nav class="nav2">
@@ -22,7 +24,6 @@
             </nav>
         </div>
         <div class="sidebar">
-            <a href="" class="btn-acento">+</a>
         </div>
 
         <section  class="main">   
@@ -31,8 +32,9 @@
                  <RouterLink to="/listar-pacientes"> <button type="button" class="btn-acento">Pacientes</button></RouterLink>
                   <RouterLink to="/listar-tratamientos"><button type="button" class="btn-acento">Tratamientos</button></RouterLink>
 
-                    <a href="" class="btn-desabilitado">AGENDA</a>
-                    <a href="cerrar_sesion.html" class="btn-secondary">CERRAR SESION</a>
+                    <a  class="btn-desabilitado">AGENDA</a>
+                <RouterLink to="/login-auth"><button type="button" class="btn-secondary">Cerrar Sesion</button></RouterLink>
+
                 </div>
             </div>
 
@@ -121,7 +123,19 @@ export default {
     align-items: center;
     justify-content: center;
 }
-
+h3{
+    
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+    font-size: 14px;
+    margin-top: 10%;
+    margin-bottom: 10%;
+    padding: 10% 0% 10% 0%;
+    box-sizing: border-box;
+    color: #00002E;
+    letter-spacing: 0.16px;
+}
 
 .main .menu-der{   
      display: flex;

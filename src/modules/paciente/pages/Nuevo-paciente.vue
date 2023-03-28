@@ -1,100 +1,114 @@
 <template>
-  <div class="flex-container">
-    <div class="contenido-header">
-      <nav class="nav">
-        <ul id="links">
-          <li><a href="#inicio">Inicio</a></li>
-          <li><a href="#tratamientos">Tratamientos</a></li>
-          <li><a href="paciente.html">Pacientes</a></li>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+    integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <div class="flex-containerNP">
+    <div class="contenido-headerNP">
+      <nav class="navNP">
+        <ul id="linksNP">
+          
+          <li><RouterLink to="/home-page">Inicio</RouterLink></li>
+          <li><RouterLink to="/listar-pacientes">Pacientes</RouterLink></li>
+          <li><RouterLink to="/listar-tratamientos">Tratamientos</RouterLink></li>
         </ul>
       </nav>
-      <nav class="nav2">
-        <div class="buscar">
-          <i class="fa-solid fa-magnifying-glass"></i>
-          <h3>Buscar</h3>
+      <nav class="nav2NP">
+        <div class="buscarNP">
         </div>
         <div class="icono-nav">
-          <i class="fa-solid fa-circle-user"></i>
         </div>
       </nav>
-    </div>
-
-    <div class="main">
-
-      <div class="sidebar">
-        <a href="" class="btn-acento">+</a>
+    </div> <div class="sidebarNP">
       </div>
 
-      <div class="main-container">
 
+    <div class="mainNP">
+      <div class="main-containerNP">
+        <div class="NP"> <h1>Nuevo Paciente</h1></div>
+        <div class="tituloNP">DATOS PERSONALES</div>
+        <div class="formularioNP">
+          <form class="" v-on:submit.prevent="agregarRegistro">
+            <div class="datosNP">
+              <div class="col1NP">
+                <div class="mb-3">
+                  <input type="number" class="form-control" v-model="paciente.dni" id="dni" name="dni" placeholder="Dni"
+                    required />
+                  <small id="helpId" class="form-text text-muted">Dni del paciente</small>
+                </div>
+                <div class="mb-3">
+                  <input type="text" class="form-control" v-model="paciente.nombre" id="nombre" name="nombre"
+                    placeholder="Nombre" required />
+                  <small id="helpId" class="form-text text-muted">Nombre del paciente</small>
+                </div>
+              </div>
+              <div class="col2NP">
+                <div class="mb-3">
+                  <input type="text" class="form-control" v-model="paciente.apellido" id="apellido" name="apellido"
+                    placeholder="Apellido" required />
+                  <small id="helpId" class="form-text text-muted">Apellido del Paciente</small>
+                </div>
 
-        <h1>Nuevo Paciente</h1>
-
-        <div class="titulo">DATOS PERSONALES</div>
-        <div class="contenedor-datos">
-        <div class="formulario" style="margin-left: 500px">
-          <form class="col-5" v-on:submit.prevent="agregarRegistro">
-            <div class="mb-3">
-              <input type="number" class="form-control" v-model="paciente.dni" id="dni" name="dni" placeholder="Dni"
-                required />
-              <small id="helpId" class="form-text text-muted">Dni del paciente</small>
+                <div class="mb-3">
+                  <input type="number" class="form-control" v-model="paciente.telefono" id="telefono" name="telefono"
+                    placeholder="Telefono" required />
+                  <small id="helpId" class="form-text text-muted">Telefono del paciente</small>
+                </div>
+              </div>
             </div>
-            <div class="mb-3">
-              <input type="text" class="form-control" v-model="paciente.nombre" id="nombre" name="nombre"
-                placeholder="Nombre" required />
-              <small id="helpId" class="form-text text-muted">Nombre del paciente</small>
-            </div>
-            <div class="mb-3">
-              <input type="text" class="form-control" v-model="paciente.apellido" id="apellido" name="apellido"
-                placeholder="Apellido" required />
-              <small id="helpId" class="form-text text-muted">Apellido del Paciente</small>
-            </div>
+            <div class="datos_fechaNP">
 
-            <div class="mb-3">
-              <input type="number" class="form-control" v-model="paciente.telefono" id="telefono" name="telefono"
-                placeholder="Telefono" required />
-              <small id="helpId" class="form-text text-muted">Telefono del paciente</small>
+              <div class="tituloNP">Fecha de Nacimiento</div>
+              <div class="col1NP">
+                <div class="mb-3">
+                  <input type="text" class="form-control" v-model="paciente.fnac" id="fnac" name="fnac"
+                    placeholder="Fecha de nacimiento" required />
+                  <small id="helpId" class="form-text text-muted">Formato: DD/MM/AA</small>
+                </div>
+              </div>
             </div>
+            <div class="datos_domicilioNP">
 
-            <div class="mb-3">
-              <input type="text" class="form-control" v-model="paciente.fnac" id="fnac" name="fnac"
-                placeholder="Fecha de nacimiento" required />
-              <small id="helpId" class="form-text text-muted">Formato: DD/MM/AA</small>
-            </div>
+              <div class="tituloNP">Domicilio</div>
+              <div class="col1NP">
 
-
-            <div class="mb-3">
-              <input type="text" class="form-control" v-model="paciente.calle" id="calle" name="calle" placeholder="Calle"
-                required />
-              <small id="helpId" class="form-text text-muted">Calle</small>
-            </div>
+                <div class="mb-3">
+                  <input type="text" class="form-control" v-model="paciente.calle" id="calle" name="calle"
+                    placeholder="Calle" required />
+                  <small id="helpId" class="form-text text-muted">Calle</small>
+                </div>
 
 
-            <div class="mb-3">
-              <input type="text" class="form-control" v-model="paciente.localidad" id="localidad" name="localidad"
-                placeholder="Localidad" required />
-              <small id="helpId" class="form-text text-muted">Localidad</small>
+                <div class="mb-3">
+                  <input type="text" class="form-control" v-model="paciente.localidad" id="localidad" name="localidad"
+                    placeholder="Localidad" required />
+                  <small id="helpId" class="form-text text-muted">Localidad</small>
+                </div>
+
+                <div class="mb-3">
+                  <input type="text" class="form-control" v-model="paciente.provincia" id="provincia" name="provincia"
+                    placeholder="Provincia" required />
+                  <small id="helpId" class="form-text text-muted">Provincia</small>
+                </div>
+              </div>
             </div>
 
-            <div class="mb-3">
-              <input type="text" class="form-control" v-model="paciente.provincia" id="provincia" name="provincia"
-                placeholder="Provincia" required />
-              <small id="helpId" class="form-text text-muted">Provincia</small>
+            <div class="menu-izqNP">
+              <button type="submit" class="btn-acentoNP">Registrar</button>
+              <RouterLink to="/listar-pacientes">
+                <button type="button" class="btn-secondaryNP">Cancelar</button>
+              </RouterLink>
             </div>
+
           </form>
-        </div>
-        </div>
-        
-         <div class="menu-izq">
-            <button type="submit" class="btn-acento">Registrar</button>
-            <RouterLink to="/listar-pacientes">
-              <button type="button" class="btn-secundary">Cancelar</button>
-            </RouterLink>
-          </div>
+
+
         </div>
       </div>
 
 
+
+    </div>
   </div>
 </template>
 
@@ -117,7 +131,7 @@ export default {
         apellido: this.paciente.apellido,
         telefono: this.paciente.telefono,
         fnac: this.paciente.fnac,
-        calle:this.paciente.calle,
+        calle: this.paciente.calle,
         localidad: this.paciente.localidad,
         provincia: this.paciente.provincia
       };
@@ -144,26 +158,20 @@ export default {
 
 
 <style>
-
-
 * {
   margin: 0;
   padding: 0;
-  font-family: Roboto;
 }
 
-html {
-  height: 100%;
-}
 
-.flex-container {
+.flex-containerNP {
   display: flex;
-  background-color: #00A6D0;
+  background-color: #2596be;
   flex-flow: row wrap;
   text-align: center;
 }
 
-.contenido-header {
+.contenido-headerNP {
 
   background-color: #FAD8D6;
   width: 100%;
@@ -175,44 +183,44 @@ html {
   align-content: center;
 }
 
-.main {
-  width: 100%;
-  height: 100vh;
-  background-image: url("../../../assets/image27.png");
-  background-size: cover;
-  display: flex;
+.mainNP {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    width: 100%;
+    background-size: cover;
+    align-items: center;
 }
 
-.main-container {
+.main-containerNP {
   width: 100%;
   display: flex;
-
   justify-content: space-between;
   flex-direction: column;
 
+  margin-left: 150px;
 
 }
 
 
-.main .sidebar {
-  background: #FAD8D6;
-  display: flex;
+.sidebarNP {
+    background: #FAD8D6;
+    width: 50px;
+    height: 100vh;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.sidebar a {
+.mainNP .main-containerNP .menu-izqNP a {
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-.main .main-container .menu-izq a {
-  display: flex;
-  align-items: center;
-  justify-content: center;
 
 }
 
-.menu-izq {
+.menu-izqNP {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
@@ -222,104 +230,86 @@ html {
   margin-top: 50px;
 }
 
-.titulo {
+.tituloNP {
   font-size: 30px;
   font-weight: 500;
   letter-spacing: 0.56px;
   margin-left: 64px;
-  margin-top: 60px;
+  margin-top: 30px;
   text-align: initial;
 }
 
-.contenedor-datos {
+.formularioNP {
   display: flex;
-
   flex-direction: column;
 
 }
 
-.datos {
+.datosNP{
   display: flex;
   flex-direction: row;
-  margin-top: 50px;
+  margin-top: 30px;
   justify-content: space-between;
 }
 
-.datos_fecha .col1 {
+.datos_fechaNP .col1NP {
   display: flex;
   flex-direction: row;
   margin-top: 20px;
   margin-left: 92px;
 }
 
-.datos_domicilio .col1 {
+.datos_domicilioNP .col1NP {
   display: flex;
-  flex-direction: row;
-  margin-top: 20px;
-  margin-left: 92px;
+    flex-direction: row;
+    margin-top: 20px;
+    margin-left: 92px;
+    margin-right: 500px;
+    justify-content: space-between;
 }
 
-.col1 {
-
-  display: flex;
-  flex-direction: column;
-  margin-left: 92px;
-}
-
-.col2 {
+.col1NP {
 
   display: flex;
   flex-direction: column;
-  margin-right: 312px
+  margin-left: 92px;
 }
 
-.contenido-header nav ul {
+.col2NP {
+
+  display: flex;
+  flex-direction: column;
+  margin-right: 600px
+}
+
+.contenido-headerNP nav ul {
   list-style: none;
   display: flex;
   margin-left: 70px;
+  margin-top: 15px;
+
 }
 
-.contenido-header .nav2 {
+.contenido-headerNP .nav2 {
   display: flex;
   justify-content: space-between;
   align-items: center;
 
 }
 
-.contenido-header nav ul li a {
+.contenido-headerNP nav ul li a {
   text-decoration: none;
   color: #00002E;
-  margin: 0 12px;
+  margin: 0px 18px;
   font-weight: 500;
-  font-size: 14px;
+  font-size: 20px;
   line-height: 20px;
   letter-spacing: 0.1px;
 }
 
-.nav2 #icono-nav {
-  width: 50px;
-  height: 50px;
-}
 
 
-.contenido-header .buscar {
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 20px;
-  color: #00002E;
-  letter-spacing: 0.25px;
-  background-color: #EE596D;
-  width: 442px;
-  height: 35px;
-  border-radius: 48px;
-  border: none;
-  padding: 0px 16px 0px 12px;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-}
-
-.main .btn-acento {
+.mainNP .btn-acentoNP {
   font-style: normal;
   font-weight: 500;
   font-size: 30px;
@@ -338,24 +328,9 @@ html {
   transition: all 1s ease;
 }
 
-.contenedor-datos .btn-acento {
-  height: 67px;
-  padding: 0%;
-  text-align: center;
-  justify-content: center;
-  align-items: center;
-}
-
-.sidebar .btn-acento {
-  font-size: 36px;
-  margin-top: 30px;
-  width: 56px;
-  height: 56px;
-  border-radius: 16px;
-}
 
 
-.btn-secundary {
+.btn-secondaryNP {
   font-style: normal;
   font-weight: 500;
   font-size: 30px;
@@ -389,16 +364,16 @@ html {
   transition: all 1s ease;
 }
 
-.datos .btn-primary {
+.datosNP .btn-primary {
   font-size: 20px;
   text-transform: capitalize;
   height: 48px;
-  width: 272px;
+  width: 300px;
   border-radius: 30px;
   padding-left: 27px;
 }
 
-.datos_fecha .btn-primary {
+.datos_fechaNP .btn-primary {
   font-size: 20px;
   text-transform: capitalize;
   height: 48px;
@@ -408,7 +383,7 @@ html {
   margin-right: 10px;
 }
 
-.datos_domicilio .btn-primary {
+.datos_domicilioNP .btn-primary {
   font-size: 20px;
   text-transform: capitalize;
   height: 48px;
@@ -417,4 +392,12 @@ html {
   padding-left: 27px;
   margin-right: 70px;
 }
+.NP h1{
+  
+  font-size: 2rem;
+    text-align: end;
+    margin-right: 120px;
+    margin-top: 10px;
+}
+
 </style>

@@ -2,37 +2,35 @@
  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
         integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-<div class="flex-container">
-        <div class="contenido-header">
+<div class="flex-containerHP ">
+        <div class="contenido-headerHP ">
             <nav class="nav">
-                <ul id="links">
-                    <li><a href="#inicio">Inicio</a></li>
-                    <li><a href="#tratamientos">Tratamientos</a></li>
-                    <li><a href="paciente.html">Pacientes</a></li>
-                </ul>
+                <ul id="linksHP ">
+          
+          <li><RouterLink to="/home-page">Inicio</RouterLink></li>
+          <li><RouterLink to="/listar-pacientes">Pacientes</RouterLink></li>
+          <li><RouterLink to="/listar-tratamientos">Tratamientos</RouterLink></li>
+        </ul>
             </nav>
             <nav class="nav2">
                 <div class="buscar">
-                    <i class="fa-solid fa-magnifying-glass"></i>
-                    <h3>Buscar</h3>
                 </div>
                 <div class="icono-nav">
-                    <i class="fa-solid fa-circle-user"></i>
                 </div>
             </nav>
         </div>
-        <div class="sidebar">
-            <a href="" class="btn-acento">+</a>
+        <div class="sidebarHP ">
         </div>
 
-        <section  class="main">   
-            <div class="main-container">
-                <div class="menu-izq">
-                 <RouterLink to="/listar-pacientes"> <button type="button" class="btn-acento">Pacientes</button></RouterLink>
-                  <RouterLink to="/listar-tratamientos"><button type="button" class="btn-acento">Tratamientos</button></RouterLink>
+        <section  class="mainHP ">   
+            <div class="main-containerHP ">
+                <div class="menu-izqHP ">
+                 <RouterLink to="/listar-pacientes"> <button type="button" class="btn-acentoHP ">Pacientes</button></RouterLink>
+                  <RouterLink to="/listar-tratamientos"><button type="button" class="btn-acentoHP ">Tratamientos</button></RouterLink>
 
-                    <a href="" class="btn-desabilitado">AGENDA</a>
-                    <a href="cerrar_sesion.html" class="btn-secondary">CERRAR SESION</a>
+                    <a class="btn-desabilitadoHP ">AGENDA</a>
+                    <RouterLink to="/Login-Auth"><button type="button" class="btn-secondaryHP ">Cerrar Sesion</button></RouterLink>
+
                 </div>
             </div>
 
@@ -48,15 +46,15 @@ export default {
 
 <style>
 
-.flex-container {
+.flex-containerHP {
     display: flex;
-    background-color: #00A6D0;
+    background-color: #2596be;
     flex-flow: row wrap;
     text-align: center;
     height: auto;
 }
 
-.contenido-header {
+.contenido-headerHP  {
      background-color: #FAD8D6;
         width: 100%;
         height: 60px;
@@ -66,19 +64,18 @@ export default {
         align-content: center;
 }
 
-.main {
+.mainHP  {
     display: flex;
     flex-direction: row-reverse;
     justify-content: flex-end;
     width: 100%;
     height: 100vh;
-    background-image: url("../../../assets/image27.png");
     background-size: cover;
     align-items: center;
 }
 
 
-.main .main-container{
+.mainHP  .main-containerHP {
       
     width: 100%;
     display: flex;
@@ -87,7 +84,7 @@ export default {
     
 
 }
-.sidebar {
+.sidebarHP  {
     background: #FAD8D6;
     width: 50px;
     height: 100%;
@@ -96,26 +93,26 @@ export default {
     flex-direction: column;
     align-items: center;
 }
-.sidebar a{
+.sidebarHP  a{
 
     display: flex;
     align-items: center;
     justify-content: center;
 }
-.main .main-container .menu-izq a{
+.mainHP  .main-containerHP  .menu-izqHP  a{
 
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.main .menu-izq{
+.mainHP  .menu-izqHP {
     display: flex;
     align-items: center;
     flex-direction: column;
    
 }
-.main .main-container .menu-der a{
+.mainHP  .main-containerHP  .menu-derHP  a{
 
     display: flex;
     align-items: center;
@@ -123,7 +120,7 @@ export default {
 }
 
 
-.main .menu-der{   
+.mainHP  .menu-derHP {   
      display: flex;
     flex-direction: column;
     align-items: center;
@@ -131,54 +128,31 @@ export default {
     justify-content: flex-end;
 }
 
-.contenido-header nav ul {
+.contenido-headerHP  nav ul {
     list-style: none;
     display: flex;
     margin-left: 70px;
+    margin-top:15px;
 }
-.contenido-header .nav2 {
+.contenido-headerHP  .nav2 {
       display: flex;
     justify-content: space-between;
     align-items: center;
 
 }
 
-.contenido-header nav ul li a {
+.contenido-headerHP  nav ul li a {
     text-decoration: none;
     color: #00002E;
     margin: 0 12px;
     font-weight: 500;
-    font-size: 14px;
+    font-size: 20px;
     line-height: 20px;
     letter-spacing: 0.1px;
+
 }
 
-.nav2 #icono-nav {
-    width: 50px;
-    height: 50px;
-}
-
-
- .contenido-header .buscar {
-    font-style: normal;
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 20px;
-    color: #00002E;
-    text-transform: capitalize;
-    text-decoration: none;
-    letter-spacing: 0.25px;
-    background-color: #EE596D;
-    width: 442px;
-    height: 35px;
-    border-radius: 48px;
-    border: none;
-    padding: 0px 16px 0px 12px;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-}
-.btn-acento {
+.btn-acentoHP  {
     font-style: normal;
     font-weight: 600;
     font-size: 48px;
@@ -196,19 +170,8 @@ export default {
     transition: all 1s ease;    
 }
 
-.sidebar .btn-acento{
-    text-decoration: none;
-    text-align: center;
-    background-color: #EE596D;
-    color: #FAD8D6;
-    font-size: 36px;
-    margin-top: 50px;
-    width: 56px;
-    height: 56px;
-    border-radius: 16px;
-}
 
-.main .btn-desabilitado {
+.mainHP  .btn-desabilitadoHP  {
     font-style: normal;
     font-weight: 600;
     font-size: 48px;
@@ -226,7 +189,7 @@ export default {
 }
 
 
-.btn-secondary {
+.btn-secondaryHP  {
     font-style: normal;
     font-weight: 600;
     font-size: 30px;
@@ -245,13 +208,15 @@ export default {
     transition: all 1s ease;
 }
 
-.btn-primary:hover {
-    background-color: #00002E;
+.btn-primaryHP:hover {
+  background-color: #00002E;
+}
+.btn-secondaryHP:hover {
+  background-color: #9FF2F5;
 }
 
-.btn-acento:hover {
-    background-color: #847996;
+.btn-acentoHP:hover {
+  background-color: #847996;
 }
-
 
 </style>
